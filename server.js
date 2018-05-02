@@ -28,7 +28,6 @@ userSchema.pre('save', function(next) {
     //pobranie aktualnego czasu
     const currentDate = new Date();
 
-    //zmiana pola na aktualny czas
     this.updated_at = currentDate;
 
     if (!this.created_at)
@@ -40,7 +39,6 @@ userSchema.pre('save', function(next) {
 //model based on userSchema
 const User = mongoose.model('User', userSchema);
 
-//instancje klasy User
 const kenny = new User({
     name: 'Kenny',
     username: 'Kenny_the_boy',
